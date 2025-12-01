@@ -1,0 +1,43 @@
+{
+    // VS Code launch configuration for Office Tool scripts
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Launch Get-OfficeToolPlus",
+            "type": "PowerShell",
+            "request": "launch",
+            "script": "${workspaceFolder}/src/scripts/Get-OfficeToolPlus.ps1",
+            "cwd": "${workspaceFolder}/src/scripts"
+        },
+        {
+            "name": "Launch Invoke-Commands",
+            "type": "PowerShell",
+            "request": "launch",
+            "script": "${workspaceFolder}/src/scripts/Invoke-Commands.ps1",
+            "cwd": "${workspaceFolder}/src/scripts"
+        },
+        {
+            "name": "Launch Process-Locales",
+            "type": "PowerShell",
+            "request": "launch",
+            "script": "${workspaceFolder}/src/scripts/Process-Locales.ps1",
+            "cwd": "${workspaceFolder}/src/scripts"
+        },
+        {
+            "name": "PowerShell: Current File",
+            "type": "PowerShell",
+            "request": "launch",
+            "script": "${file}",
+            "cwd": "${fileDirname}"
+        },
+        {
+            "name": "Node: Launch app.js",
+            "type": "node",
+            "request": "launch",
+            "program": "${workspaceFolder}/app.js"
+        }
+    ],
+    "powershell.debugging.createTemporaryIntegratedConsole": false,
+    "powershell.integratedConsole.showOnStartup": false,
+    "powershell.codeFormatting.enable": false
+}

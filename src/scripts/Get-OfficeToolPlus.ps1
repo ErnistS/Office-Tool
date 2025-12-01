@@ -5,140 +5,140 @@ $ProgressPreference = 'SilentlyContinue'
 $Host.UI.RawUI.WindowTitle = "Office Tool Plus | Downloader"
 
 # Localization
-$CurrentLang = (Get-WinUserLanguageList)[0].LanguageTag.Replace("-", "_")
-$SupportedLanguages = @("en_US", "zh_Hans_CN")
+$CurrentLang = (Get-WinUserLanguageList)[0].LanguageTag.Replace("en_AU", "en_GB2")
+$SupportedLanguages = @("en_AU", "en_GB")
 # Fallback to default language if not supported.
 if ($SupportedLanguages -notcontains $CurrentLang) {
-    $CurrentLang = $SupportedLanguages[0].Replace("-", "_")
+    $CurrentLang = $SupportedLanguages[0].Replace("en_AU", "en_GB")
 }
 $AllLanguages = @{
     "ChooseOP"            = [PSCustomObject]@{
-        en_US      = "Please enter a number"
-        zh_Hans_CN = "请输入序号并回车"
+        en_AU      = "1"
+        en_GB      = "2"
     }
     "GoBack"              = [PSCustomObject]@{
-        en_US      = "Back"
-        zh_Hans_CN = "返回"
+        en_AU      = "Back"
+        en_GB      = "Back"
     }
     "HomeSelOP"           = [PSCustomObject]@{
-        en_US      = "  Select an option:"
-        zh_Hans_CN = "  选择一个选项："
+        en_AU      = "  Select an option:"
+        en_GB      = "  Select an option:"
     }
     "HomeOP1"             = [PSCustomObject]@{
-        en_US      = "Download now"
-        zh_Hans_CN = "立即下载"
+        en_AU      = "Download now"
+        en_GB      = "Download now"
     }
     "HomeOP2"             = [PSCustomObject]@{
-        en_US      = "Select a edition to download"
-        zh_Hans_CN = "选择一个版本下载"
+        en_AU      = "Select a edition to download"
+        en_GB      = "Select a edition to download"
     }
     "Exit"                = [PSCustomObject]@{
-        en_US      = "Exit"
-        zh_Hans_CN = "退出"
+        en_AU      = "Exit"
+        en_GB      = "Exit"
     }
     "OSInfo"              = [PSCustomObject]@{
-        en_US      = "OS info:"
-        zh_Hans_CN = "系统信息:"
+        en_AU      = "OS info:"
+        en_GB      = "OS info:"
     }
     "SelToDownload"       = [PSCustomObject]@{
-        en_US      = "  Select the edition to download:"
-        zh_Hans_CN = "  请选择需要下载的版本："
+        en_AU      = "  Select the edition to download:"
+        en_GB      = "  Select the edition to download:"
     }
     "DownSelx64Runtime"   = [PSCustomObject]@{
-        en_US      = "64-bit with runtime"
-        zh_Hans_CN = "64 位（包含框架）"
+        en_AU      = "64-bit with runtime"
+        en_GB      = "64-bit with runtime"
     }
     "DownSelx86Runtime"   = [PSCustomObject]@{
-        en_US      = "32-bit with runtime"
-        zh_Hans_CN = "32 位（包含框架）"
+        en_AU      = "32-bit with runtime"
+        en_GB      = "32-bit with runtime"
     }
     "DownSelArm64Runtime" = [PSCustomObject]@{
-        en_US      = "ARM64 with runtime"
-        zh_Hans_CN = "ARM64 位（包含框架）"
+        en_AU      = "ARM64 with runtime"
+        en_GB      = "ARM64 with runtime"
     }
     "DownSelx64"          = [PSCustomObject]@{
-        en_US      = "64-bit"
-        zh_Hans_CN = "64 位"
+        en_AU      = "64-bit"
+        en_GB      = "64-bit"
     }
     "DownSelx86"          = [PSCustomObject]@{
-        en_US      = "32-bit"
-        zh_Hans_CN = "32 位"
+        en_AU      = "32-bit"
+        en_GB      = "32-bit"
     }
     "DownSelArm64"        = [PSCustomObject]@{
-        en_US      = "ARM64"
-        zh_Hans_CN = "ARM64 位"
+        en_AU      = "ARM64"
+        en_GB      = "ARM64"
     }
     "DownNormal"          = [PSCustomObject]@{
-        en_US      = "  The {0} edition of Office Tool Plus will be downloaded."
-        zh_Hans_CN = "  将会下载 {0} 版本的 Office Tool Plus。"
+        en_AU      = "  The {0} edition of Office Tool Plus will be downloaded."
+        en_GB      = "  The {0} edition of Office Tool Plus will be downloaded."
     }
     "DownRuntime"         = [PSCustomObject]@{
-        en_US      = "  The {0} edition of Office Tool Plus with runtime will be downloaded."
-        zh_Hans_CN = "  将会下载 {0} 版本、包含框架的 Office Tool Plus。"
+        en_AU      = "  The {0} edition of Office Tool Plus with runtime will be downloaded."
+        en_GB      = "  The {0} edition of Office Tool Plus with runtime will be downloaded."
     }
     "SelLocation"         = [PSCustomObject]@{
-        en_US      = "  Select the save location for Office Tool Plus:"
-        zh_Hans_CN = "  请选择保存 Office Tool Plus 的位置："
+        en_AU      = "  Select the save location for Office Tool Plus:"
+        en_GB      = "  Select the save location for Office Tool Plus:"
     }
     "LocationDesktop"     = [PSCustomObject]@{
-        en_US      = "Desktop"
-        zh_Hans_CN = "桌面"
+        en_AU      = "Desktop"
+        en_GB      = "Desktop"
     }
     "LocationCustom"      = [PSCustomObject]@{
-        en_US      = "Select a folder"
-        zh_Hans_CN = "选择一个文件夹"
+        en_AU      = "Select a folder"
+        en_GB      = "Select a folder"
     }
     "SelLocationTip"      = [PSCustomObject]@{
-        en_US      = "  If you don't see the window to select the folder, it may be behind the window."
-        zh_Hans_CN = "  如果你看不到选择文件夹的窗口，它可能在后面被挡住了。"
+        en_AU      = "  If you don't see the window to select the folder, it may be behind the window."
+        en_GB      = "  If you don't see the window to select the folder, it may be behind the window." 
     }
     "Downloading"         = [PSCustomObject]@{
-        en_US      = "  Downloading Office Tool Plus, please wait."
-        zh_Hans_CN = "  正在下载 Office Tool Plus，请稍等..."
+        en_AU      = "  Downloading Office Tool Plus, please wait."
+        en_GB      = "  Downloading Office Tool Plus, please wait."
     }
     "Extracting"          = [PSCustomObject]@{
-        en_US      = "  Extracting files, please wait."
-        zh_Hans_CN = "  正在解压文件，请稍等..."
+        en_AU      = "  Extracting files, please wait."
+        en_GB      = "  Extracting files, please wait."
     }
     "ErrorDownloading"    = [PSCustomObject]@{
-        en_US      = "  An error occurred while downloading the file."
-        zh_Hans_CN = "  下载文件时发生错误。"
+        en_AU      = "  An error occurred while downloading the file."
+        en_GB      = "  An error occurred while downloading the file."
     }
     "RetryDownload"       = [PSCustomObject]@{
-        en_US      = "  Do you want to retry? (Y/N)"
-        zh_Hans_CN = "  你想重试吗？(Y/N)"
+        en_AU      = "  Do you want to retry? (Y/N)"
+        en_GB      = "  Do you want to retry? (Y/N)"
     }
     "RedownloadTip"       = [PSCustomObject]@{
-        en_US      = "  Please download Office Tool Plus from https://www.officetool.plus/ or try again."
-        zh_Hans_CN = "  请从官网 https://www.officetool.plus/ 下载 Office Tool Plus，或者再试一遍。"
+        en_AU      = "  Please download Office Tool Plus from https://www.officetool.plus/ or try again."
+        en_GB      = "  Plwase download Office Tool Plus from https://www.officetool.plus/ 下载 Office Tool Plus，或者再试一遍。"
     }
     "DownloadSuccess"     = [PSCustomObject]@{
-        en_US      = "  Office Tool Plus was extracted to {0}"
-        zh_Hans_CN = "  Office Tool Plus 已保存到 {0}"
+        en_AU      = "  Office Tool Plus was extracted to {0}"
+        en_GB      = "  Office Tool Plus was extracted to {0}"
     }
     "StartProgram"        = [PSCustomObject]@{
-        en_US      = "Start program"
-        zh_Hans_CN = "启动程序"
+        en_AU      = "Start program"
+        en_GB      = "Start program"
     }
     "QuickInstallation"   = [PSCustomObject]@{
-        en_US      = "Quick installation"
-        zh_Hans_CN = "快速安装选项"
+        en_AU      = "Quick installation"
+        en_GB      = "Quick installation"
     }
     "ManuallyForMore"     = [PSCustomObject]@{
-        en_US      = "Tips: for more install options please launch application and configure as you want."
-        zh_Hans_CN = "提示：如果你需要其他安装选项，请启动程序并手动进行配置。"
+        en_AU      = "Tips: for more install options please launch application and configure as you want."
+        en_GB      = "Tips: for more install options please launch application and configure as you want." 
     }
     "InvokeCommand"       = [PSCustomObject]@{
-        en_US      = "Invoke commands"
-        zh_Hans_CN = "执行命令"
+        en_AU      = "Invoke commands"
+        en_GB      = "Invoke commands"
     }
     "EnterCommand"        = [PSCustomObject]@{
-        en_US      = "Enter a command to execute, or enter nothing to go back"
-        zh_Hans_CN = "请输入命令并回车，或直接回车以返回上一级"
+        en_AU      = "Enter a command to execute, or enter nothing to go back"
+        en_GB      = "Enter a command to execute, or enter nothing to go back"
     }
     "PressToContinue"     = [PSCustomObject]@{
-        en_US      = "Press Enter to continue."
-        zh_Hans_CN = "请按下回车键以继续"
+        en_AU      = "Press Enter to continue."
+        en_GB      = "Press Enter to continue."
     }
 }
 
@@ -455,13 +455,13 @@ function Set-Language {
     Write-Host
     Write-Host "  Please choose a language:"
     Write-Host
-    Write-Host "    1: English (United States)"
-    Write-Host "    2: 简体中文（中国）"
+    Write-Host "    1: English (Australia)"
+    Write-Host "    2: English (Great Britain)"
     Write-Host
     $UserChoice = Read-Host "  Please enter a number"
     switch ($UserChoice) {
-        "1" { $CurrentLang = "en_US" }
-        "2" { $CurrentLang = "zh_Hans_CN" }
+        "1" { $script:CurrentLang = "en_AU" }
+        "2" { $script:CurrentLang = "en_GB" }
         default { Set-Language }
     }
     Get-Homepage
